@@ -4,8 +4,53 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to Razor Pages</h1>
-    <h2> By Daniel Grace</h2>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<header class="text-center">
+    <h1 class="display-4">Core5 Razor Pages</h1>
+    <h2>By @Model.FullName</h2>
+</header>
+
+<form method="post" class="mx-auto" style="width:200px">
+    <p class="col-sm-2">
+        <label for="name">Name</label>
+        <input type="text" required="true" placeholder="Your full name" name="FullName">
+    </p>
+    <p class="col-sm-4">
+        <label for="email">Email</label>
+        <input type="email" required="true" name="email">
+    </p>
+    <p class="col-sm-4">
+        <label for="InputAmount">GBP</label>
+        <input type="number" required placeholder="0.00" asp-for="GBPInput">
+    </p>
+    <p class="col-sm-4">
+        <label for="OutputAmount">USD</label>
+        <input type="number" asp-for="@Model.USDConversion" value="@Model.USDConversion.ToString("0.00")" readonly />
+    </p>
+    <p class="col-sm-2">
+        <button type="submit" class="btn btn-primary">
+
+            Register
+        </button>
+    </p>
+</form>
+<form>
+    <header class="text-center">
+        <h1 class="display-4">Core5 Razor Pages</h1>
+        <h2>By @Model.FullName</h2>
+    </header>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
