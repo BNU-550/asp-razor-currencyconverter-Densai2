@@ -13,6 +13,8 @@ namespace RazorCurrencyConverter.Pages
         public const double GBP_TO_USD = 1.3661;
         [BindProperty]
         public string FullName { get; set; }
+        [BindProperty]
+        public string Email { get; set; }
         private readonly ILogger<IndexModel> _logger;
         [BindProperty]
         public double GBPInput { get; set; }
@@ -27,6 +29,7 @@ namespace RazorCurrencyConverter.Pages
         public void OnGet()
         {
             FullName = "Daniel Grace";
+            Email = "AnExampleEmail@bucks.ac.uk";
         }
 
 

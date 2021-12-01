@@ -7,32 +7,34 @@
 <header class="text-center">
     <h1 class="display-4">Core5 Razor Pages</h1>
     <h2>By @Model.FullName</h2>
+    <h2>@Model.Email</h2>
 </header>
 
 <form method="post" class="mx-auto" style="width:200px">
     <p class="col-sm-2">
         <label for="name">Name</label>
-        <input type="text" required="true" placeholder="Your full name" name="FullName">
+        <input type="text" required" placeholder="Your full name" name="FullName">
     </p>
     <p class="col-sm-4">
         <label for="email">Email</label>
-        <input type="email" required="true" name="email">
+        <input type="email" required placeholder="Your email" name="email">
     </p>
     <p class="col-sm-4">
-        <label for="InputAmount">GBP</label>
+        <label for="InputAmount">GBP(£)</label>
         <input type="number" required placeholder="0.00" asp-for="GBPInput">
     </p>
     <p class="col-sm-4">
-        <label for="OutputAmount">USD</label>
+        <label for="OutputAmount">USD($)</label>
         <input type="number" asp-for="@Model.USDConversion" value="@Model.USDConversion.ToString("0.00")" readonly />
     </p>
     <p class="col-sm-2">
         <button type="submit" class="btn btn-primary">
 
-            Register
+            Process
         </button>
     </p>
 </form>
+@**
 <form>
     <header class="text-center">
         <h1 class="display-4">Core5 Razor Pages</h1>
@@ -54,3 +56,4 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+*@
